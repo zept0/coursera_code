@@ -43,3 +43,44 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+
+void print statistics (unsigned char *stats_list,unsigned int array_lens) {
+
+}
+
+void print_array(unsigned char *data_array,unsigned int array_lens) {
+
+}
+
+unsigned char find_median(unsigned char *data_array, unsigned int array_lens) {
+
+return 0;
+}
+
+unsigned char find_mean(unsigned char *data_array,unsigned int array_lens) {return 0;
+}
+
+unsigned char find_maximum(unsigned char *data_array, unsigned int array_lens) {
+return 0;
+}
+
+unsigned char find minimum(unsigned char *data_array,unsigned int array_lens) {
+return 0;
+}
+
+unsigned char sort_array(unsigned char *data_array,unsigned int array_lens){return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

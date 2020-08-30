@@ -22,21 +22,105 @@
  */
 #ifndef __STATS_H__
 #define __STATS_H__
+ 
+/**
+ * @brief Prints Statistics
+ *
+ * This function takes in as an input an array and the length of the array. It  * will print the minimum, maximum, mean, and meadian in a formatted display.
+ *
+ * @param stats_list The array
+ * @param array_lens The length of the array 
+ * @return No return
+ *
+ */
 
-/* Add Your Declarations and Function Comments here */ 
+void print_statistics(unsigned char *stats_list,unsigned int array_lens); 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Prints Array
  *
- * <Add Extended Description Here>
+ * This function takes in as an input an array and an int length of the array.  * It will print the array out.  
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param data_array The array
+ * @param array_lens The Length of the Array
  *
- * @return <Add Return Informaiton here>
+ * @return No Return  
+ *
  */
+
+void print_array(unsigned char *data_array,unsigned int array_lens);
+
+/**
+ * @brief Finds the median of the array  
+ *
+ * This function takes in as an input an array and an int length.This function  * will return the median value of the array.
+ *
+ * @param data_array The array  
+ * @param array_lens The length of the array
+ *
+ * @return The median value of the array
+ *
+ */
+
+unsigned char find_median(unsigned char *data_array, unsigned int array_lens);
+
+/**
+ * @brief Finds the mean of the array
+ *
+ * This function takes in as an input an array and an int length. This function * will return the mean value of the array.
+ *
+ * @param data_array The array
+ * @param array_lens The length of the array
+ *
+ * @return The mean value of the array
+ *
+ */
+
+unsigned char find_mean(unsigned char *data_array, unsigned int array_lens);
+
+/**
+ * @brief Finds the maximum of the array
+ *
+ * This function takes in as an input an array and an int length. This function * will return the mean value of the array.
+ *
+ * @param data_array The array
+ * @param array_lens The length of the array
+ *
+ * @return The maximum value of the array
+ */
+
+unsigned char find_maximum(unsigned char *data_array,unsigned int array_lens);
+
+/**
+ * @brief Finds the minimum of the array
+ *
+ * This function takes in as input an array and an int length. This function
+ * will return the minimum value of the array
+ *
+ * @return The minimum of the array
+ *
+ */
+
+unsigned char find_minimum(unsigned char *data_array,unsigned int array_lens);
+
+/**
+ * @brief Sort the arrray from largest to smallest
+ *
+ * This function takes in as an array input and an int length.This function
+ * will return char from largest to smallest
+ *
+ * @return The char corresponding to the largest to smallest
+ *
+ */
+
+unsigned char sort_array(unsigned char *data_array,unsigned int array_lens);
+
+
+
+
+
+
+
 
 
 #endif /* __STATS_H__ */
