@@ -39,36 +39,148 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
+  print_array(test, SIZE);
+  sort_array (test,SIZE);
+  unsigned char minimum=find_minimum(test,SIZE);
+  unsigned char maximum=find_maximum(test,SIZE);
+  unsigned char mean=find_mean(test, SIZE);
+  unsigned char median=find_median(test,SIZE);
+  printf("\nThe minimum value in the array is: %d ", minimum);
+  printf("\nThe maximum value in the array is: %d ", maximum);
+  printf("\nThe mean value of the array is: %d ", mean);
+  printf("\nThe median value of the array is: %d ", median);
 }
 
 /* Add other Implementation File Code Here */
 
-void print statistics (unsigned char *stats_list,unsigned int array_lens) {
+void print_statistics (unsigned char *stats_list,unsigned int array_lens) {
 
 }
 
 void print_array(unsigned char *data_array,unsigned int array_lens) {
 
+	for(int x=0; x<array_lens;x++) {
+	
+	printf(" %d",*data_array);
+	data_array++;
+	
+	}
 }
 
 unsigned char find_median(unsigned char *data_array, unsigned int array_lens) {
+	unsigned char newarray [array_lens];
+        for(char k=0;k<array_lens;k++) {
+                newarray[k]=*data_array;
+                data_array++;
+        }
 
-return 0;
+        unsigned char i,j,x;
+        i=1;
+        while(i < array_lens) {
+                j=i;
+                while(j >0 && newarray[j-1]>newarray[j]) {
+                        x=newarray[j];
+                        newarray[j]=newarray[j-1];
+                        newarray[j-1]=x;
+                        j=j-1;
+                }
+                i=i+1;
+        }
+
+	unsigned char middle=array_lens/2;	
+	unsigned char median=(newarray[middle]+newarray[middle-1])/2;
+	
+	return median;
 }
 
-unsigned char find_mean(unsigned char *data_array,unsigned int array_lens) {return 0;
+unsigned char find_mean(unsigned char *data_array,unsigned int array_lens){
+	unsigned int sum=0;
+	for(char i=0; i < array_lens; i++){
+		sum=sum+(*data_array);
+		data_array++;
+	}
+
+	unsigned char mean=sum/array_lens;
+
+	return mean;
 }
 
 unsigned char find_maximum(unsigned char *data_array, unsigned int array_lens) {
-return 0;
+	unsigned char newarray [array_lens];
+        for(char k=0;k<array_lens;k++) {
+                newarray[k]=*data_array;
+                data_array++;
+        }
+
+        unsigned char i,j,x;
+        i=1;
+        while(i < array_lens) {
+                j=i;
+                while(j >0 && newarray[j-1]>newarray[j]) {
+                        x=newarray[j];
+                        newarray[j]=newarray[j-1];
+                        newarray[j-1]=x;
+                        j=j-1;
+                }
+                i=i+1;
+        }
+
+        unsigned char maximum=newarray[array_lens-1];
+	return maximum;
 }
 
-unsigned char find minimum(unsigned char *data_array,unsigned int array_lens) {
-return 0;
+unsigned char find_minimum(unsigned char *data_array,unsigned int array_lens) {
+	unsigned char newarray [array_lens];
+        for(char k=0;k<array_lens;k++) {
+                newarray[k]=*data_array;
+                data_array++;
+        }
+
+        unsigned char i,j,x;
+        i=1;
+        while(i < array_lens) {
+                j=i;
+                while(j >0 && newarray[j-1]>newarray[j]) {
+                        x=newarray[j];
+                        newarray[j]=newarray[j-1];
+                        newarray[j-1]=x;
+                        j=j-1;
+                }
+                i=i+1;
+        }
+	
+	unsigned char minimum=newarray[0];
+		
+	return minimum;
 }
 
-unsigned char sort_array(unsigned char *data_array,unsigned int array_lens){return 0;
+unsigned char sort_array(unsigned char *data_array,unsigned int array_lens){
+
+	unsigned char newarray [array_lens];
+	for(char k=0;k<array_lens;k++) {
+		newarray[k]=*data_array;
+		data_array++;
+	}
+
+	unsigned char i,j,x;
+	i=1;
+	while(i < array_lens) {
+		j=i;
+		while(j >0 && newarray[j-1]<newarray[j]) {
+			x=newarray[j];
+			newarray[j]=newarray[j-1];
+			newarray[j-1]=x;
+			j=j-1;
+		}
+		i=i+1;
+	}
+
+	for(int w=0; w<array_lens;w++) {
+                printf("\nElement[%d]=%d\n",w,newarray[w]);
+        }
+
+	return 0;
+
 }
 
 
